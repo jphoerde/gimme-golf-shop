@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="8" fill="#0D1F17"/>
+  <!-- Golf ball -->
+  <circle cx="11.5" cy="22" r="7.5" fill="white"/>
+  <circle cx="9" cy="20" r="1.2" fill="#C8D6D0"/>
+  <circle cx="14" cy="20" r="1.2" fill="#C8D6D0"/>
+  <circle cx="11.5" cy="24" r="1.2" fill="#C8D6D0"/>
+  <!-- Pin -->
+  <rect x="21.25" y="7" width="1.5" height="17" rx="0.75" fill="white"/>
+  <!-- Flag -->
+  <path d="M22.75 7.5 L29.5 10.5 L22.75 13.5Z" fill="#DDF247"/>
+  <!-- Hole shadow -->
+  <ellipse cx="22" cy="24.2" rx="4" ry="1.4" fill="#030a06"/>
+</svg>
