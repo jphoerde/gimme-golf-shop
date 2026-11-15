@@ -838,6 +838,123 @@ html.ballcursor input:not([type=checkbox]):not([type=radio]):not([type=range]):n
 html.ballcursor select{cursor:default !important}
 .divot{position:fixed;z-index:9998;pointer-events:none;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;border:2px solid var(--color-ink);animation:divot .55s var(--ease-out) forwards}
 @keyframes divot{to{transform:scale(5);opacity:0;border-width:.4px}}
+/* ---------- admin ---------- */
+.btn-xs{padding:6px 10px;font-size:12px;border-radius:100px}
+.adm-main{min-width:0}
+.adm-bar-top{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+.adm-lede{font-size:14px;color:var(--color-ink-muted);max-width:60ch}
+.adm-kpis{grid-template-columns:repeat(3,minmax(0,1fr))}
+.adm-kpis.pair{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:640px){.adm-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.adm-kpis .stat-tile{padding:16px}.adm-kpis .stat-tile .n{font-size:21px}}
+.adm-kpis .stat-tile .n{font-size:26px;line-height:1.15;white-space:nowrap}
+.adm-sub{font-size:11.5px;color:var(--color-ink-faint);margin-top:6px;line-height:1.4}
+.adm-cols{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:18px;align-items:start}
+@media (max-width:1040px){.adm-cols{grid-template-columns:1fr}}
+.adm-card-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.adm-card-head h3{font-size:18px;letter-spacing:-.01em}
+.adm-card-head>span{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-ink-faint)}
+.adm-more{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;border-bottom:2px solid var(--color-accent);padding-bottom:1px}
+.adm-more svg{width:14px;height:14px}
+.adm-filters{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.adm-search{display:flex;align-items:center;gap:8px;border:1px solid var(--color-border-strong);border-radius:100px;padding:9px 14px;min-width:min(320px,100%);background:var(--color-surface)}
+.adm-search:focus-within{border-color:var(--color-ink)}
+.adm-search svg{width:16px;height:16px;color:var(--color-ink-muted);flex:none}
+.adm-search input{border:none;outline:none;background:none;font-size:13.5px;width:100%;min-width:0}
+.adm-count{font-size:13px;color:var(--color-ink-muted);margin:14px 0 10px}
+.adm-count b{color:var(--color-ink);font-weight:500}
+.adm-nothing{font-size:13.5px;color:var(--color-ink-muted);padding:18px 20px;border:1px dashed var(--color-border-strong);border-radius:var(--radius-m)}
+.adm-table-wrap{overflow-x:auto;border:1px solid var(--color-border);border-radius:var(--radius-l);background:var(--color-surface)}
+.adm-table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:720px}
+.adm-table th{text-align:left;font-family:var(--font-mono);font-size:10.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--color-ink-faint);padding:12px 14px;border-bottom:1px solid var(--color-border);white-space:nowrap;background:var(--color-surface-alt)}
+.adm-table td{padding:12px 14px;border-bottom:1px solid var(--color-border);vertical-align:middle}
+.adm-table tbody tr:last-child td{border-bottom:none}
+.adm-table .num{text-align:right;font-variant-numeric:tabular-nums}
+.adm-table .nowrap,.adm-table td.mono,.adm-table .pill{white-space:nowrap}
+.adm-table tr[data-nav]{cursor:pointer;transition:background .15s}
+.adm-table tr[data-nav]:hover,.adm-table tr[data-nav]:focus-visible{background:var(--color-surface-alt)}
+.adm-table td a:hover b{text-decoration:underline}
+.adm-none{text-align:center;color:var(--color-ink-muted);padding:34px 14px !important}
+.adm-cellsub{display:block;font-family:var(--font-body);font-size:11.5px;color:var(--color-ink-faint);margin-top:2px;font-weight:400}
+.adm-actions{white-space:nowrap}
+.adm-actions .btn{border:1px solid var(--color-border-strong);color:var(--color-ink)}
+.adm-actions .btn.adm-danger{color:var(--color-danger);border-color:transparent}
+.adm-user,.adm-item{display:flex;align-items:center;gap:10px;min-width:0}
+.adm-user small,.adm-item small{display:block;font-size:11.5px;color:var(--color-ink-faint);font-weight:400;margin-top:1px}
+.adm-user b,.adm-item b{font-weight:600}
+.adm-thumb{width:40px;height:40px;border-radius:10px;overflow:hidden;flex:none;display:block;background:var(--color-surface-alt)}
+.adm-chart{display:grid;grid-template-columns:auto 1fr;gap:10px}
+.adm-yaxis{display:flex;flex-direction:column;justify-content:space-between;height:190px;font-family:var(--font-mono);font-size:10.5px;color:var(--color-ink-faint);text-align:right;transform:translateY(-6px)}
+.adm-plot{position:relative;min-width:0}
+.adm-grid{position:absolute;left:0;right:0;top:0;height:190px;display:flex;flex-direction:column;justify-content:space-between;pointer-events:none}
+.adm-grid i{display:block;border-top:1px solid var(--color-border)}
+.adm-grid i:last-child{border-top-color:var(--color-border-strong)}
+.adm-bars{position:relative;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:2px;height:190px;align-items:end}
+.adm-col{position:relative;height:100%;display:flex;align-items:flex-end;justify-content:center;outline:none}
+.adm-bar{width:min(28px,64%);background:var(--color-primary);border-radius:4px 4px 0 0;min-height:0;transition:background .15s}
+.adm-bar.zero{height:2px !important;background:var(--color-border-strong);border-radius:0}
+.adm-col:hover .adm-bar,.adm-col:focus-visible .adm-bar{background:var(--color-primary-hover)}
+.adm-val{position:absolute;left:50%;transform:translateX(-50%);font-family:var(--font-mono);font-size:10.5px;color:var(--color-ink);white-space:nowrap;pointer-events:none}
+.adm-tip{position:absolute;bottom:calc(100% - 26px);left:50%;transform:translateX(-50%);background:var(--color-night);color:var(--color-on-night);font-size:11.5px;line-height:1.4;padding:8px 10px;border-radius:8px;white-space:nowrap;opacity:0;visibility:hidden;transition:opacity .12s;z-index:3;pointer-events:none}
+.adm-tip b{display:block;font-family:var(--font-mono);font-weight:500;font-size:13px}
+.adm-col:hover .adm-tip,.adm-col:focus-visible .adm-tip{opacity:1;visibility:visible}
+.adm-col:first-child .adm-tip{left:0;transform:none}
+.adm-col:last-child .adm-tip{left:auto;right:0;transform:none}
+.adm-xaxis{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:2px;margin-top:8px;font-family:var(--font-mono);font-size:10.5px;color:var(--color-ink-faint);text-align:center}
+.adm-hbars{display:flex;flex-direction:column;gap:10px}
+.adm-hrow{display:grid;grid-template-columns:130px 1fr 34px;align-items:center;gap:10px;font-size:13px}
+.adm-hlabel{color:var(--color-ink-muted)}
+.adm-htrack{height:12px;display:block}
+.adm-hfill{display:block;height:100%;min-width:2px;background:var(--color-primary);border-radius:0 4px 4px 0}
+.adm-hval{text-align:right;font-size:13px}
+.adm-meter-bar{height:14px;border-radius:4px;background:var(--color-border-strong);overflow:hidden;display:flex}
+.adm-meter-bar span{display:block;background:var(--color-primary);border-right:2px solid var(--color-surface)}
+.adm-meter-legend{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:10px;font-size:13px;color:var(--color-ink-muted)}
+.adm-meter-legend b{color:var(--color-ink);font-weight:500}
+.adm-meter-legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px}
+.adm-meter-legend i.a{background:var(--color-primary)}
+.adm-meter-legend i.b{background:var(--color-border-strong)}
+.adm-queue{display:flex;flex-direction:column}
+.adm-queue a{display:grid;grid-template-columns:34px 1fr 16px;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid var(--color-border);font-size:13.5px}
+.adm-queue li:last-child a{border-bottom:none}
+.adm-queue a:hover span{text-decoration:underline}
+.adm-queue b{font-size:18px;font-weight:500}
+.adm-queue svg{width:15px;height:15px;color:var(--color-ink-faint)}
+.adm-q-danger{color:var(--color-danger)}
+.adm-q-warn{color:var(--color-accent-strong)}
+.adm-q-muted{color:var(--color-ink-muted)}
+.adm-detail{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:22px;align-items:start}
+@media (max-width:1100px){.adm-detail{grid-template-columns:1fr}}
+.adm-detail aside{display:flex;flex-direction:column;gap:14px}
+.adm-side-card{padding:16px 0 4px;overflow:hidden}
+.adm-side-card h4{font-family:var(--font-mono);font-size:10.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--color-ink-faint);padding:0 20px 10px}
+.adm-side-card .spec-row{font-size:13px;padding:10px 20px;align-items:baseline}
+.adm-side-card .spec-row:nth-child(even){background:none}
+.adm-side-card .spec-value{max-width:62%}
+.adm-person{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:4px 20px 14px}
+.adm-person svg{width:15px;height:15px;color:var(--color-ink-faint)}
+.adm-person:hover b{text-decoration:underline}
+.adm-order-head{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:flex-start}
+.adm-alert{margin-top:14px;background:var(--color-danger-soft);border:none;font-size:13.5px}
+.adm-alert h3{color:var(--color-danger)}
+.adm-events{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.adm-events li{display:grid;grid-template-columns:118px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--color-border);font-size:13.5px}
+.adm-events li:last-child{border-bottom:none}
+.adm-events span{font-size:11.5px;color:var(--color-ink-faint);padding-top:2px}
+.adm-events small{display:block;font-size:12px;color:var(--color-ink-muted);margin-top:2px}
+.adm-notes{margin-bottom:14px;display:flex;flex-direction:column;gap:10px}
+.adm-notes li{background:var(--color-surface-alt);border-radius:var(--radius-m);padding:10px 14px;font-size:13.5px}
+.adm-notes small{font-size:11px;color:var(--color-ink-faint)}
+.adm-report-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.adm-report{font-size:13.5px}
+.adm-report-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:12px;flex-wrap:wrap}
+.adm-fee label{display:block;font-size:12.5px;font-weight:700;color:var(--color-ink-muted);margin-bottom:8px}
+.adm-fee p{font-size:12px;color:var(--color-ink-faint);margin-top:10px}
+@media (max-width:860px){
+  .adm .dash-side{flex-direction:row;overflow-x:auto;gap:6px;padding-bottom:6px}
+  .adm .dash-link{white-space:nowrap;flex:none}
+  .adm-hrow{grid-template-columns:104px 1fr 30px}
+  .adm-events li{grid-template-columns:1fr;gap:2px}
+}
 </style>
 </head>
 <body>
@@ -960,8 +1077,28 @@ const SELLERS = [
   {id:'bruno', name:'Bruno Alves', city:'Belo Horizonte', state:'MG', joined:'2023-09-30', rating:4.7, ratingCount:15, salesCount:15, purchasesCount:6, initials:'BA', color:'#1B3B2C', verified:false, bio:'Colecionador de putters. Só vendo o que não uso mais.'},
   {id:'fernanda', name:'Fernanda Lima', city:'Florianópolis', state:'SC', joined:'2024-05-11', rating:4.9, ratingCount:6, salesCount:6, purchasesCount:2, initials:'FL', color:'#8A611A', verified:false, bio:'Comecei a jogar em 2023 e estou renovando o bag aos poucos.'},
 ];
+SELLERS.forEach(s=>{ if(!s.email) s.email=s.id+'@exemplo.com'; if(!s.role) s.role='user'; if(!s.status) s.status='ativo'; });
+function buildExtraUsers(){
+  const d = n => new Date(Date.now()-n*86400000).toISOString().slice(0,10);
+  const mk = (id,name,city,state,ago,color,extra) => Object.assign({id,name,city,state,joined:d(ago),rating:0,ratingCount:0,salesCount:0,purchasesCount:0,initials:name.split(' ').slice(0,2).map(w=>w[0]).join('').toUpperCase(),color,verified:false,bio:'',email:id+'@exemplo.com',role:'user',status:'ativo'},extra||{});
+  return [
+    mk('pedro','Pedro Nunes','Campinas','SP',48,'#2F6B4F'),
+    mk('ana','Ana Ribeiro','Salvador','BA',33,'#B3402A'),
+    mk('lucas','Lucas Martins','Brasília','DF',46,'#8A611A'),
+    mk('helena','Helena Duarte','Porto Alegre','RS',3,'#1B3B2C'),
+    mk('admin','Admin Gimme','Porto Alegre','RS',900,'#0D1F17',{role:'admin',email:'admin@exemplo.com',verified:true}),
+  ];
+}
+function buildSeedReports(){
+  const d = n => new Date(Date.now()-n*86400000).toISOString();
+  return [
+    {id:'DEN-003',productId:'t003',reporterId:'bruno',reason:'Suspeita de falsificação',text:'O número de série na foto não bate com o padrão da marca para esse modelo.',date:d(1),status:'aberta',resolution:null},
+    {id:'DEN-002',productId:'b006',reporterId:'ana',reason:'Descrição não confere',text:'O anúncio fala em Pro V1, mas as fotos mostram bolas de outras linhas.',date:d(4),status:'aberta',resolution:null},
+    {id:'DEN-001',productId:'s008',reporterId:'lucas',reason:'Preço abusivo',text:'Par muito usado por esse preço.',date:d(19),status:'resolvida',resolution:'arquivada',resolvedAt:d(18)},
+  ];
+}
 const sellerById = id => (typeof STORE!=='undefined' && STORE ? STORE.users : SELLERS).find(s=>s.id===id);
-function sellerLocation(id){ const s=SELLERS.find(x=>x.id===id); return s? (s.city+', '+s.state) : ''; }
+function sellerLocation(id){ const s=sellerById(id); return s? (s.city+', '+s.state) : ''; }
 
 /* ---------- product imagery ----------
    Every listing shows a studio render cut out on transparency, sitting on one
@@ -1269,7 +1406,10 @@ function freshState(){
     questions: q,
     offers: OFFERS.map(o=>({...o})),
     orders: buildSeedOrders(),
-    users: SELLERS.map(s=>({...s})),
+    users: [...SELLERS.map(s=>({...s})), ...buildExtraUsers()],
+    reports: buildSeedReports(),
+    adminLog: [],
+    settings: {feeRate: 0.10},
     fittingDraft: null,
     fittingProfile: null,
     fittingAlert: false,
@@ -1292,6 +1432,15 @@ function initStore(){
   if(STORE.fittingDraft===undefined) STORE.fittingDraft = null;
   if(STORE.fittingProfile===undefined) STORE.fittingProfile = null;
   if(STORE.fittingAlert===undefined) STORE.fittingAlert = false;
+  if(!STORE.reports) STORE.reports = buildSeedReports();
+  if(!STORE.adminLog) STORE.adminLog = [];
+  if(!STORE.settings) STORE.settings = {feeRate:0.10};
+  STORE.users.forEach(u=>{ if(!u.role) u.role='user'; if(!u.status) u.status='ativo'; if(!u.email) u.email=u.id+'@exemplo.com'; });
+  // Ensure admin user exists in demo data
+  if(!STORE.users.find(u=>u.role==='admin')){
+    const extras = buildExtraUsers();
+    extras.forEach(u=>{ if(!STORE.users.find(x=>x.id===u.id)) STORE.users.push(u); });
+  }
 }
 async function initStoreAsync(){
   // Fast path: render immediately with local/demo data
@@ -1406,6 +1555,14 @@ function openModal(innerHtml){
   </div>`;
 }
 function closeModal(){ document.getElementById('modal-root').innerHTML=''; }
+function confirmDialog(title, text, okLabel, action, dataAttrs){
+  openModal(`<h3 style="font-size:20px;margin-bottom:8px;padding-right:30px">${title}</h3>
+    <p style="font-size:14px;color:var(--color-ink-muted);margin-bottom:20px">${text}</p>
+    <div style="display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap">
+      <button class="btn btn-ghost btn-sm" data-action="close-modal">Cancelar</button>
+      <button class="btn btn-primary btn-sm" data-action="${action}" ${dataAttrs||''}>${okLabel}</button>
+    </div>`);
+}
 
 /* ============================================================
    ICONS — small stroke-based line-icon set (24x24, currentColor)
@@ -1462,7 +1619,7 @@ const BRAND_HTML = `<span class="brand-word">gimme<i class="brand-ball"></i></sp
 /* ============================================================
    ROUTER
    ============================================================ */
-const PROTECTED_PREFIXES = ['favoritos','compras','checkout','vendedor','perfil'];
+const PROTECTED_PREFIXES = ['favoritos','compras','checkout','vendedor','perfil','admin'];
 
 function parseHash(){
   let h = location.hash.slice(1) || '/';
@@ -1519,6 +1676,7 @@ function dispatch(seg, params){
     case 'checkout': return seg[1] ? viewCheckout(seg[1], params) : viewNotFound();
     case 'vendedor': return dispatchVendedor(seg, params);
     case 'fitting': return viewFitting(params);
+    case 'admin': return dispatchAdmin(seg, params);
     default: return viewNotFound();
   }
 }
@@ -1689,6 +1847,7 @@ function openAccountMenu(user){
       <li><a href="#/vendedor" class="dash-link" data-close-modal>${icon('grid')}Portal do vendedor</a></li>
       <li><a href="#/compras" class="dash-link" data-close-modal>${icon('box')}Minhas compras</a></li>
       <li><a href="#/favoritos" class="dash-link" data-close-modal>${icon('heart')}Favoritos</a></li>
+      ${user.role==='admin' ? `<li><a href="#/admin" class="dash-link" data-close-modal>${icon('shield')}Painel admin</a></li>` : ''}
       <li><button class="dash-link" style="width:100%;text-align:left;border:none;background:none;cursor:pointer" data-action="logout">${icon('logout')}Sair</button></li>
     </ul>
   `);
@@ -2127,6 +2286,7 @@ function viewLogin(params){
         <div class="divider-or">contas de demonstração</div>
         <div class="chip-row" style="justify-content:center">
           ${SELLERS.map(s=>`<button class="chip" data-action="quick-login" data-id="${s.id}" data-next="${escapeHtml(next)}">${s.name.split(' ')[0]}</button>`).join('')}
+          <button class="chip" data-action="quick-login" data-id="admin" data-next="/admin">${icon('shield')} Administrador</button>
         </div>
         <p class="auth-switch">Não tem conta? <a href="#/cadastro">Criar conta</a></p>
       </div>
@@ -3724,7 +3884,7 @@ function createOrderFromCheckout(p){
   const order = {
     id: 'PED-'+Math.floor(10000+Math.random()*89999),
     productId: p.id, buyerId: user.id, sellerId: p.sellerId,
-    price: p.price, freight,
+    price: p.price, freight, feeRate: STORE.settings ? STORE.settings.feeRate : 0.10,
     date: new Date().toISOString().slice(0,10),
     addressStreet: addr.street, addressCity: addr.city, addressState: addr.state, addressZip: addr.zip,
     payment: CHECKOUT_DATA.payment==='pix' ? 'PIX' : 'Cartão de crédito',
@@ -4161,6 +4321,7 @@ const ACTIONS = {
   'toggle-fav'(el){ toggleFavorite(el.dataset.id); render(); },
   'toggle-filters'(){ const panel=document.getElementById('filters-panel'); if(panel) panel.classList.toggle('open'); },
   'reset-demo'(){ if(confirm('Reiniciar todos os dados de demonstração? Isso apaga anúncios, favoritos e a conta criados neste protótipo.')) resetDemoData(); },
+  'close-modal'(){ closeModal(); },
   async 'logout'(){
     if(isRealUser(STORE.currentUserId)) await sb.auth.signOut();
     STORE.currentUserId=null; STORE.orders=buildSeedOrders(); STORE.offers=OFFERS.map(o=>({...o}));
@@ -4497,6 +4658,843 @@ const BallCursor = (function(){
 
 
 window.addEventListener('hashchange', render);
+
+/* ============================================================
+   ADMIN PANEL
+   ============================================================ */
+/* ============================================================
+   ADMIN — painel do administrador do marketplace
+   Rotas: #/admin, /pedidos(/:id), /anuncios, /usuarios(/:id),
+   /moderacao, /financeiro, /auditoria. Acesso: user.role==='admin'.
+   Tudo aqui lê e escreve no STORE local; no produto real cada
+   leitura vira um endpoint e cada ação grava no log de auditoria
+   no servidor (ver a spec da área admin).
+   ============================================================ */
+const ADM_DAY = 86400000;
+const ADM_OPEN = ['aguardando_envio','enviado','em_transito','saiu_para_entrega','entregue','protecao'];
+const ADM_ISSUE = ['problema_entrega','em_disputa'];
+const ADM_CAT_LABEL = {taco:'Tacos', bola:'Bolas', sapato:'Sapatos'};
+const ADM_REMOVE_REASONS = ['Suspeita de falsificação','Descrição ou fotos não conferem','Item proibido','Anúncio duplicado','Pedido do vendedor'];
+const ADM_LOG_LABEL = {
+  'anuncio.pausar':'Pausou anúncio', 'anuncio.reativar':'Reativou anúncio', 'anuncio.remover':'Removeu anúncio',
+  'usuario.verificar':'Verificou usuário', 'usuario.desverificar':'Removeu verificação', 'usuario.suspender':'Suspendeu usuário', 'usuario.reativar':'Reativou usuário',
+  'pedido.liberar':'Liberou pagamento', 'pedido.reembolsar':'Reembolsou comprador', 'pedido.nota':'Anotou no pedido',
+  'denuncia.arquivar':'Arquivou denúncia', 'denuncia.remover_anuncio':'Removeu anúncio denunciado',
+  'config.comissao':'Alterou a comissão',
+};
+
+function isAdmin(){ const u = currentUser(); return !!u && u.role==='admin'; }
+function admLog(action, targetType, targetId, detail){
+  STORE.adminLog.unshift({id:'LOG-'+Date.now().toString(36)+Math.floor(Math.random()*90+10), at:new Date().toISOString(), adminId:STORE.currentUserId, action, targetType, targetId, detail:detail||''});
+}
+
+/* ---------- metric definitions (single source for every screen) ---------- */
+function admDays(a, b){ return Math.max(0, Math.floor((new Date(b) - new Date(a)) / ADM_DAY)); }
+function admSum(list, fn){ return list.reduce((t,x)=> t + fn(x), 0); }
+function admMedian(nums){ if(!nums.length) return 0; const s=[...nums].sort((a,b)=>a-b), m=Math.floor(s.length/2); return s.length%2 ? s[m] : Math.round((s[m-1]+s[m])/2); }
+function admPct(part, total){ return total ? Math.round(part/total*100) : 0; }
+// "Novo" = declared unused by the seller; every other condition counts as usado.
+function admIsNew(p){ return p.condition==='Novo' || p.condition==='Novas'; }
+function admSaleOrder(p){ return STORE.orders.find(o=>o.productId===p.id && o.orderStatus!=='reembolsado'); }
+// Days on the shelf: until today for open listings, until the sale for sold ones.
+function admListedDays(p){
+  const sale = p.status==='vendido' ? admSaleOrder(p) : null;
+  return admDays(p.createdAt, sale ? sale.date : new Date());
+}
+// Commission is charged on the item price only; freight is passed through to the seller.
+function admFee(o){ const r = o.feeRate!=null ? o.feeRate : STORE.settings.feeRate; return Math.round(o.price*r*100)/100; }
+function admPayout(o){ return o.price + o.freight - admFee(o); }
+function admPaid(o){ return o.price + o.freight; }
+function admCounts(o){ return o.orderStatus!=='reembolsado'; }           // counts toward GMV
+function admHeld(o){ return o.orderStatus!=='concluido' && o.orderStatus!=='reembolsado'; } // money still in custody
+function admOrdersSince(days){
+  if(!days) return STORE.orders.slice();
+  const cut = Date.now() - days*ADM_DAY;
+  return STORE.orders.filter(o=> new Date(o.date).getTime() >= cut);
+}
+function admPeople(){ return STORE.users.filter(u=>u.role!=='admin'); }
+function admUserStats(u){
+  const listings = STORE.products.filter(p=>p.sellerId===u.id);
+  const sales = STORE.orders.filter(o=>o.sellerId===u.id && admCounts(o));
+  const buys = STORE.orders.filter(o=>o.buyerId===u.id && admCounts(o));
+  return {listings, active:listings.filter(p=>p.status==='ativo').length, sales, buys,
+    soldValue:admSum(sales,o=>o.price), boughtValue:admSum(buys,o=>o.price)};
+}
+function admUnanswered(){
+  const out = [];
+  Object.keys(STORE.questions).forEach(pid=>{
+    const p = productById(pid);
+    (STORE.questions[pid]||[]).forEach(q=>{ if(!q.answer && p) out.push({q, p, days:admDays(q.date, new Date())}); });
+  });
+  return out.sort((a,b)=>b.days-a.days);
+}
+function admOpenDisputes(){ return STORE.orders.filter(o=>ADM_ISSUE.includes(o.orderStatus)); }
+function admOpenReports(){ return STORE.reports.filter(r=>r.status==='aberta'); }
+
+/* ---------- small render helpers ---------- */
+function admUserCell(u, sub){
+  if(!u) return '<span style="color:var(--color-ink-faint)">Usuário removido</span>';
+  return `<span class="adm-user"><span class="avatar-circle" style="background:${u.color}">${u.initials}</span><span><b>${escapeHtml(u.name)}</b>${sub?`<small>${sub}</small>`:''}</span></span>`;
+}
+function admItemCell(p){
+  if(!p) return '<span style="color:var(--color-ink-faint)">Anúncio removido</span>';
+  return `<span class="adm-item"><span class="adm-thumb">${p.photos[0]||''}</span><span><b>${escapeHtml(p.brand+' '+p.model)}</b><small>${ADM_CAT_LABEL[p.category]}${p.type?' · '+p.type:''} · ${p.id}</small></span></span>`;
+}
+function admTable(heads, rows, emptyText){
+  return `<div class="adm-table-wrap"><table class="adm-table">
+    <thead><tr>${heads.map(h=>`<th${h.num?' class="num"':''}>${h.label}</th>`).join('')}</tr></thead>
+    <tbody>${rows.length ? rows.join('') : `<tr><td colspan="${heads.length}" class="adm-none">${emptyText||'Nenhum registro com esses filtros.'}</td></tr>`}</tbody>
+  </table></div>`;
+}
+function admTile(n, label, sub, tone){
+  return `<div class="stat-tile${tone?' adm-tone-'+tone:''}"><div class="n">${n}</div><div class="l">${label}</div>${sub?`<div class="adm-sub">${sub}</div>`:''}</div>`;
+}
+function admChips(base, params, key, opts){
+  const cur = params.get(key)||'';
+  return `<div class="chip-row">${opts.map(([v,l,n])=>{
+    const p = new URLSearchParams(params.toString());
+    if(v) p.set(key, v); else p.delete(key);
+    const qs = p.toString();
+    return `<a class="chip ${cur===v?'active':''}" href="${base}${qs?'?'+qs:''}">${l}${n!=null?` <span class="mono" style="opacity:.6">${n}</span>`:''}</a>`;
+  }).join('')}</div>`;
+}
+function admSearch(base, params, placeholder){
+  return `<form class="adm-search" data-form="admin-search" data-base="${base}" role="search">
+    ${icon('search')}<input type="text" name="q" id="adm-q" value="${escapeHtml(params.get('q')||'')}" placeholder="${placeholder}" aria-label="${placeholder}" autocomplete="off">
+  </form>`;
+}
+function admMatch(q, ...fields){
+  if(!q) return true;
+  const n = s => String(s==null?'':s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  const needle = n(q);
+  return fields.some(f=> n(f).includes(needle));
+}
+function admUserStatusPill(u){
+  return u.status==='suspenso' ? '<span class="pill pill-cancelled">Suspenso</span>' : '<span class="pill pill-active">Ativo</span>';
+}
+function admListingPill(p){
+  return p.status==='cancelado' && p.removedByAdmin ? '<span class="pill pill-cancelled">Removido</span>' : pill(p.status);
+}
+
+function adminShell(activeKey, title, inner, crumbs){
+  const nd = admOpenDisputes().length, nr = admOpenReports().length;
+  const items = [
+    {key:'geral', href:'#/admin', label:'Visão geral', ic:'grid'},
+    {key:'pedidos', href:'#/admin/pedidos', label:'Pedidos', ic:'box'},
+    {key:'anuncios', href:'#/admin/anuncios', label:'Anúncios', ic:'tag'},
+    {key:'usuarios', href:'#/admin/usuarios', label:'Usuários', ic:'user'},
+    {key:'moderacao', href:'#/admin/moderacao', label:'Moderação', ic:'shield', cnt:nd+nr},
+    {key:'financeiro', href:'#/admin/financeiro', label:'Financeiro', ic:'card'},
+    {key:'auditoria', href:'#/admin/auditoria', label:'Auditoria', ic:'clock'},
+  ];
+  return section(`
+    <div class="wrap page-head">
+      ${crumbs ? breadcrumb(crumbs) : '<div class="eyebrow" style="margin-bottom:8px">Painel do administrador</div>'}
+      <h1>${title}</h1>
+    </div>
+    <div class="wrap dash-grid section-tight adm">
+      <nav class="dash-side" aria-label="Seções do painel">
+        ${items.map(it=>`<a href="${it.href}" class="dash-link ${it.key===activeKey?'active':''}">${icon(it.ic)}${it.label}${it.cnt?`<span class="cnt">${it.cnt}</span>`:''}</a>`).join('')}
+      </nav>
+      <div class="adm-main">${inner}</div>
+    </div>
+  `);
+}
+function viewAdminDenied(){
+  return section(`<div class="wrap section">${emptyState('shield','Área restrita','Esta área é só para administradores do Gimme Golf Shop. Entre com uma conta de administrador para continuar.', `<a href="#/login?next=%2Fadmin" class="btn btn-primary">Trocar de conta</a>`)}</div>`);
+}
+function dispatchAdmin(seg, params){
+  if(!isAdmin()) return viewAdminDenied();
+  if(seg.length===1) return viewAdminOverview(params);
+  switch(seg[1]){
+    case 'pedidos': return seg[2] ? viewAdminOrder(seg[2]) : viewAdminOrders(params);
+    case 'anuncios': return viewAdminListings(params);
+    case 'usuarios': return seg[2] ? viewAdminUser(seg[2]) : viewAdminUsers(params);
+    case 'moderacao': return viewAdminModeration();
+    case 'financeiro': return viewAdminFinance();
+    case 'auditoria': return viewAdminAudit();
+    default: return viewNotFound();
+  }
+}
+
+/* ---------- charts ---------- */
+// Weekly GMV for the last `weeks` weeks. One series, so one hue and no legend;
+// every bar carries a tooltip and the orders table is the tabular view.
+function admWeeklyChart(weeks){
+  const now = Date.now(), buckets = [];
+  for(let i=weeks-1;i>=0;i--){
+    const end = now - i*7*ADM_DAY, start = end - 7*ADM_DAY;
+    const list = STORE.orders.filter(o=>{ const t=new Date(o.date).getTime(); return admCounts(o) && t>start && t<=end; });
+    buckets.push({start, gmv:admSum(list,o=>o.price), n:list.length});
+  }
+  const max = Math.max(1, ...buckets.map(b=>b.gmv));
+  const step = max<=2000 ? 500 : max<=5000 ? 1000 : 2000;
+  const top = Math.ceil(max/step)*step;
+  const ticks = [top, top/2, 0];
+  const fmt = v => 'R$ '+Number(v).toLocaleString('pt-BR');
+  const peak = buckets.reduce((a,b)=> b.gmv>a.gmv?b:a, buckets[0]);
+  const lbl = t => new Date(t).toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'});
+  return `<div class="adm-chart" role="img" aria-label="GMV por semana nas últimas ${weeks} semanas. Maior semana: ${fmt(peak.gmv)}.">
+    <div class="adm-yaxis">${ticks.map(t=>`<span>${fmt(t)}</span>`).join('')}</div>
+    <div class="adm-plot">
+      <div class="adm-grid"><i></i><i></i><i></i></div>
+      <div class="adm-bars">${buckets.map(b=>`
+        <div class="adm-col" tabindex="0">
+          <div class="adm-tip"><b>${fmt(b.gmv)}</b>${b.n} pedido${b.n===1?'':'s'} · semana de ${lbl(b.start)}</div>
+          ${b===peak && b.gmv ? `<span class="adm-val" style="bottom:calc(${(b.gmv/top*100).toFixed(1)}% + 6px)">${fmt(b.gmv)}</span>` : ''}
+          <div class="adm-bar${b.gmv?'':' zero'}" style="height:${(b.gmv/top*100).toFixed(1)}%"></div>
+        </div>`).join('')}
+      </div>
+      <div class="adm-xaxis">${buckets.map((b,i)=>`<span>${i%2===(weeks-1)%2 ? lbl(b.start) : ''}</span>`).join('')}</div>
+    </div>
+  </div>`;
+}
+function admHBars(rows, unit){
+  const max = Math.max(1, ...rows.map(r=>r.n));
+  return `<div class="adm-hbars">${rows.map(r=>`
+    <div class="adm-hrow"><span class="adm-hlabel">${r.label}</span>
+      <span class="adm-htrack"><span class="adm-hfill" style="width:${(r.n/max*100).toFixed(1)}%"></span></span>
+      <span class="adm-hval mono">${r.n}${unit||''}</span></div>`).join('')}</div>`;
+}
+function admMeter(part, total, labelA, labelB){
+  const pa = admPct(part,total);
+  return `<div class="adm-meter" role="img" aria-label="${labelA}: ${part} de ${total}">
+    <div class="adm-meter-bar"><span style="width:${pa}%"></span></div>
+    <div class="adm-meter-legend"><span><i class="a"></i>${labelA} <b class="mono">${part}</b> · ${pa}%</span><span><i class="b"></i>${labelB} <b class="mono">${total-part}</b> · ${100-pa}%</span></div>
+  </div>`;
+}
+
+/* ============================================================
+   ADMIN: VISÃO GERAL
+   ============================================================ */
+function viewAdminOverview(params){
+  const period = params.get('p')||'30';
+  const days = period==='all' ? 0 : Number(period);
+  const orders = admOrdersSince(days).filter(admCounts);
+  const gmv = admSum(orders, o=>o.price), fees = admSum(orders, admFee);
+  const products = STORE.products, live = products.filter(p=>p.status==='ativo');
+  const people = admPeople();
+  const cut = days ? Date.now()-days*ADM_DAY : 0;
+  const newUsers = people.filter(u=> new Date(u.joined).getTime() >= cut).length;
+  const newListings = products.filter(p=> p.status!=='rascunho' && new Date(p.createdAt).getTime() >= cut).length;
+  const held = STORE.orders.filter(admHeld);
+  const periodLabel = days ? 'nos últimos '+days+' dias' : 'desde o início';
+
+  // work queue
+  const disputes = STORE.orders.filter(o=>o.orderStatus==='em_disputa');
+  const failed = STORE.orders.filter(o=>o.orderStatus==='problema_entrega');
+  const late = STORE.orders.filter(o=>o.orderStatus==='aguardando_envio' && admDays(o.date, new Date())>=2);
+  const reports = admOpenReports();
+  const unanswered = admUnanswered().filter(x=>x.days>=2);
+  const stale = live.filter(p=>admListedDays(p)>60);
+  const queue = [
+    disputes.length && {n:disputes.length, tone:'danger', label:'disputa'+(disputes.length>1?'s':'')+' aguardando decisão', href:'#/admin/moderacao'},
+    failed.length && {n:failed.length, tone:'danger', label:'pedido'+(failed.length>1?'s':'')+' com problema na entrega', href:'#/admin/pedidos?status=problema'},
+    reports.length && {n:reports.length, tone:'warn', label:'denúncia'+(reports.length>1?'s':'')+' de anúncio para analisar', href:'#/admin/moderacao'},
+    late.length && {n:late.length, tone:'warn', label:'pedido'+(late.length>1?'s':'')+' pago'+(late.length>1?'s':'')+' há 2 dias ou mais sem envio', href:'#/admin/pedidos?status=aberto'},
+    unanswered.length && {n:unanswered.length, tone:'muted', label:'pergunta'+(unanswered.length>1?'s':'')+' sem resposta há mais de 48h', href:'#/admin/moderacao'},
+    stale.length && {n:stale.length, tone:'muted', label:'anúncio'+(stale.length>1?'s':'')+' ativo'+(stale.length>1?'s':'')+' há mais de 60 dias', href:'#/admin/anuncios?idade=60'},
+  ].filter(Boolean);
+
+  const recent = STORE.orders.slice().sort((a,b)=> b.date.localeCompare(a.date) || b.id.localeCompare(a.id)).slice(0,5);
+
+  return adminShell('geral','Visão geral', `
+    <div class="adm-bar-top">
+      <p class="adm-lede">Números do marketplace ${periodLabel}.</p>
+      ${admChips('#/admin', new URLSearchParams({p:period}), 'p', [['7','7 dias'],['30','30 dias'],['90','90 dias'],['all','Tudo']])}
+    </div>
+    <div class="stat-row adm-kpis">
+      ${admTile(money(gmv), 'GMV', 'Valor dos itens vendidos, sem frete')}
+      ${admTile(orders.length, 'Pedidos', orders.length ? 'Ticket médio '+money(gmv/orders.length) : 'Nenhum no período')}
+      ${admTile(money(fees), 'Receita de comissão', (STORE.settings.feeRate*100).toLocaleString('pt-BR')+'% sobre o item')}
+      ${admTile(live.length, 'Anúncios ativos', newListings+' publicado'+(newListings===1?'':'s')+' no período')}
+      ${admTile(people.length, 'Usuários', newUsers+' novo'+(newUsers===1?'':'s')+' no período')}
+      ${admTile(money(admSum(held, admPaid)), 'Em custódia', held.length+' pedido'+(held.length===1?'':'s')+' ainda não liberado'+(held.length===1?'':'s'))}
+    </div>
+
+    <div class="adm-cols">
+      <div class="card card-pad">
+        <div class="adm-card-head"><h3>GMV por semana</h3><span>últimas 10 semanas</span></div>
+        ${admWeeklyChart(10)}
+      </div>
+      <div class="card card-pad">
+        <div class="adm-card-head"><h3>Precisa de atenção</h3><span>${queue.length ? admSum(queue,x=>x.n)+' itens' : 'fila vazia'}</span></div>
+        ${queue.length ? `<ul class="adm-queue">${queue.map(x=>`<li><a href="${x.href}"><b class="mono adm-q-${x.tone}">${x.n}</b><span>${x.label}</span>${icon('chevronRight')}</a></li>`).join('')}</ul>`
+          : `<p style="font-size:13.5px;color:var(--color-ink-muted)">Nada pendente: sem disputas, denúncias ou entregas com problema.</p>`}
+      </div>
+    </div>
+
+    <div class="adm-card-head" style="margin-top:30px"><h3>Pedidos mais recentes</h3><a href="#/admin/pedidos" class="adm-more">Ver todos ${icon('arrowRight')}</a></div>
+    ${admOrdersTable(recent)}
+  `);
+}
+
+/* ============================================================
+   ADMIN: PEDIDOS
+   ============================================================ */
+function admOrdersTable(list){
+  return admTable(
+    [{label:'Pedido'},{label:'Data'},{label:'Item'},{label:'Comprador'},{label:'Vendedor'},{label:'Total pago',num:1},{label:'Comissão',num:1},{label:'Status'}],
+    list.map(o=>{
+      const p = productById(o.productId), b = sellerById(o.buyerId), s = sellerById(o.sellerId);
+      return `<tr data-nav="#/admin/pedidos/${o.id}" tabindex="0" role="link" aria-label="Abrir pedido ${o.id}">
+        <td class="mono"><b>${o.id}</b></td>
+        <td class="nowrap">${fmtDate(o.date)}</td>
+        <td>${p ? escapeHtml(p.brand+' '+p.model) : 'Anúncio removido'}</td>
+        <td>${b?escapeHtml(b.name):'—'}</td>
+        <td>${s?escapeHtml(s.name):'—'}</td>
+        <td class="num mono">${money(admPaid(o))}</td>
+        <td class="num mono">${money(admFee(o))}</td>
+        <td>${orderPill(o)}</td>
+      </tr>`;
+    }), 'Nenhum pedido com esses filtros.');
+}
+function viewAdminOrders(params){
+  const status = params.get('status')||'', q = params.get('q')||'';
+  const all = STORE.orders.slice().sort((a,b)=> b.date.localeCompare(a.date) || b.id.localeCompare(a.id));
+  const groups = {
+    aberto: o=>ADM_OPEN.includes(o.orderStatus) && o.orderStatus!=='protecao',
+    protecao: o=>o.orderStatus==='protecao',
+    problema: o=>ADM_ISSUE.includes(o.orderStatus),
+    concluido: o=>o.orderStatus==='concluido',
+    reembolsado: o=>o.orderStatus==='reembolsado',
+  };
+  const cnt = k => all.filter(groups[k]).length;
+  const list = all.filter(o=> (!status || (groups[status] && groups[status](o))))
+    .filter(o=>{ const p=productById(o.productId), b=sellerById(o.buyerId), s=sellerById(o.sellerId);
+      return admMatch(q, o.id, o.trackingCode, p&&p.brand+' '+p.model, b&&b.name, s&&s.name, o.addressCity); });
+  return adminShell('pedidos','Pedidos', `
+    <div class="adm-filters">
+      ${admChips('#/admin/pedidos', params, 'status', [['','Todos',all.length],['aberto','Em andamento',cnt('aberto')],['protecao','Em proteção',cnt('protecao')],['problema','Disputa ou problema',cnt('problema')],['concluido','Concluídos',cnt('concluido')],['reembolsado','Reembolsados',cnt('reembolsado')]])}
+      ${admSearch('#/admin/pedidos', params, 'Buscar por pedido, pessoa, item ou rastreio')}
+    </div>
+    <p class="adm-count"><b class="mono">${list.length}</b> pedido${list.length===1?'':'s'} · <b class="mono">${money(admSum(list, admPaid))}</b> pagos · <b class="mono">${money(admSum(list.filter(admCounts), admFee))}</b> de comissão</p>
+    ${admOrdersTable(list)}
+  `);
+}
+function viewAdminOrder(id){
+  const o = STORE.orders.find(x=>x.id===id);
+  if(!o) return adminShell('pedidos','Pedido não encontrado', emptyState('box','Pedido não encontrado','Confira o número e tente de novo.', `<a href="#/admin/pedidos" class="btn btn-primary">Ver todos os pedidos</a>`));
+  const p = productById(o.productId), b = sellerById(o.buyerId), s = sellerById(o.sellerId);
+  const fee = admFee(o), rate = o.feeRate!=null ? o.feeRate : STORE.settings.feeRate;
+  const deliveryLabel = o.deliveryMethod==='correios' ? 'Correios' : o.deliveryMethod==='local' ? (o.localType==='retirada'?'Retirada presencial':'Entrega local combinada') : 'Ainda não definida pelo vendedor';
+  const payoutState = o.orderStatus==='concluido' ? 'Liberado ao vendedor em '+fmtDate(o.paymentReleasedAt)
+    : o.orderStatus==='reembolsado' ? 'Devolvido ao comprador em '+fmtDate(o.refundedAt)
+    : o.orderStatus==='em_disputa' ? 'Bloqueado pela disputa'
+    : o.orderStatus==='protecao' ? 'Em custódia até '+new Date(o.protectionDeadline).toLocaleString('pt-BR',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'})
+    : 'Em custódia até a entrega';
+  const row = (l,v) => `<div class="spec-row"><span class="spec-label">${l}</span><span class="spec-value">${v}</span></div>`;
+  const canRelease = ['entregue','protecao','em_disputa'].includes(o.orderStatus);
+  const canRefund = ['em_disputa','problema_entrega'].includes(o.orderStatus);
+  const notes = o.adminNotes||[];
+  const events = [
+    {at:o.date, label:'Compra confirmada', sub:o.payment},
+    ...(o.trackingHistory||[]).map(e=>({at:e.at, label:TRACKING_STATUS_LABEL[e.status]||e.status, sub:e.rawStatus})),
+    o.dispute && {at:o.dispute.openedAt, label:'Disputa aberta pelo comprador', sub:o.dispute.reason},
+    o.paymentReleasedAt && {at:o.paymentReleasedAt, label:'Pagamento liberado ao vendedor', sub:{confirmado_comprador:'Comprador confirmou o recebimento', liberacao_automatica:'Liberação automática após 48h', decisao_admin:'Decisão do administrador'}[o.paymentReleaseReason]||''},
+    o.refundedAt && {at:o.refundedAt, label:'Comprador reembolsado', sub:'Decisão do administrador'},
+  ].filter(Boolean).sort((x,y)=> new Date(x.at)-new Date(y.at));
+  const when = t => String(t).length<=10 ? fmtDate(t) : new Date(t).toLocaleString('pt-BR',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'});
+
+  return adminShell('pedidos', 'Pedido '+o.id, `
+    <div class="adm-detail">
+      <div>
+        <div class="card card-pad">
+          <div class="adm-order-head">
+            ${admItemCell(p)}
+            <div style="text-align:right">${orderPill(o)}<div style="font-size:12px;color:var(--color-ink-muted);margin-top:6px">${fmtDate(o.date)}</div></div>
+          </div>
+          ${o.orderStatus==='em_disputa' || o.orderStatus==='reembolsado' ? '' : trackerHtml(o)}
+          ${p ? `<a href="#/produto/${p.id}" class="adm-more" style="margin-top:14px">Ver anúncio ${icon('arrowRight')}</a>` : ''}
+        </div>
+
+        ${o.dispute ? `<div class="card card-pad adm-alert">
+          <div class="adm-card-head"><h3>Disputa ${o.dispute.status==='aberta'?'aberta':'encerrada'}</h3><span>${when(o.dispute.openedAt)}</span></div>
+          <p><b>${escapeHtml(o.dispute.reason)}</b></p>
+          ${o.dispute.text ? `<p style="margin-top:6px;color:var(--color-ink-muted)">“${escapeHtml(o.dispute.text)}”</p>` : ''}
+          ${o.dispute.resolution ? `<p style="margin-top:10px">Decisão: <b>${o.dispute.resolution==='reembolsado'?'reembolso ao comprador':'pagamento liberado ao vendedor'}</b>${o.dispute.note?' · '+escapeHtml(o.dispute.note):''}</p>` : ''}
+        </div>` : ''}
+        ${o.orderStatus==='problema_entrega' ? `<div class="card card-pad adm-alert"><div class="adm-card-head"><h3>Problema na entrega</h3></div><p>${escapeHtml(o.trackingRaw||'A transportadora reportou uma falha na entrega.')}</p></div>` : ''}
+
+        ${canRelease || canRefund ? `<div class="card card-pad" style="margin-top:14px">
+          <div class="adm-card-head"><h3>Ações do administrador</h3></div>
+          <p style="font-size:13px;color:var(--color-ink-muted);margin-bottom:14px">Cada ação fica registrada na auditoria com seu usuário e o horário.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            ${canRelease ? `<button class="btn btn-primary btn-sm" data-action="admin-order-release" data-id="${o.id}">Liberar ${money(admPayout(o))} ao vendedor</button>` : ''}
+            ${canRefund ? `<button class="btn btn-danger-outline btn-sm" data-action="admin-order-refund" data-id="${o.id}">Reembolsar ${money(admPaid(o))} ao comprador</button>` : ''}
+          </div>
+        </div>` : ''}
+
+        <div class="card card-pad" style="margin-top:14px">
+          <div class="adm-card-head"><h3>Histórico</h3></div>
+          <ol class="adm-events">${events.map(e=>`<li><span class="mono">${when(e.at)}</span><div><b>${e.label}</b>${e.sub?`<small>${escapeHtml(e.sub)}</small>`:''}</div></li>`).join('')}</ol>
+        </div>
+
+        <div class="card card-pad" style="margin-top:14px">
+          <div class="adm-card-head"><h3>Notas internas</h3><span>visíveis só para administradores</span></div>
+          ${notes.length ? `<ul class="adm-notes">${notes.map(n=>`<li><small class="mono">${when(n.at)} · ${escapeHtml((sellerById(n.adminId)||{}).name||'Admin')}</small><p>${escapeHtml(n.text)}</p></li>`).join('')}</ul>` : ''}
+          <form data-form="admin-order-note" data-id="${o.id}" style="display:flex;gap:8px;flex-wrap:wrap">
+            <input class="input" id="adm-note" name="note" type="text" placeholder="Escreva uma nota sobre este pedido" aria-label="Nota interna" style="flex:1;min-width:200px" required>
+            <button class="btn btn-outline btn-sm" type="submit">Salvar nota</button>
+          </form>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card adm-side-card">
+          <h4>Valores</h4>
+          ${row('Item', money(o.price))}
+          ${row('Frete', o.freight?money(o.freight):'Grátis')}
+          ${row('<b>Total pago</b>', '<b>'+money(admPaid(o))+'</b>')}
+          ${row('Comissão ('+(rate*100).toLocaleString('pt-BR')+'%)', '− '+money(fee))}
+          ${row('Repasse ao vendedor', money(admPayout(o)))}
+          ${row('Situação do repasse', `<span style="font-family:var(--font-body)">${payoutState}</span>`)}
+          ${row('Pagamento', `<span style="font-family:var(--font-body)">${o.payment}</span>`)}
+        </div>
+        <div class="card adm-side-card">
+          <h4>Comprador</h4>
+          <a href="#/admin/usuarios/${o.buyerId}" class="adm-person">${admUserCell(b, b?escapeHtml(b.email||''):'')}${icon('chevronRight')}</a>
+          <h4>Vendedor</h4>
+          <a href="#/admin/usuarios/${o.sellerId}" class="adm-person">${admUserCell(s, s?escapeHtml(s.email||''):'')}${icon('chevronRight')}</a>
+        </div>
+        <div class="card adm-side-card">
+          <h4>Entrega</h4>
+          ${row('Modalidade', `<span style="font-family:var(--font-body)">${deliveryLabel}</span>`)}
+          ${o.trackingCode ? row('Rastreio', escapeHtml(o.trackingCode)) : ''}
+          ${row('Endereço', `<span style="font-family:var(--font-body)">${escapeHtml(orderAddressFull(o))}</span>`)}
+        </div>
+      </aside>
+    </div>
+  `, [{href:'#/admin',label:'Admin'},{href:'#/admin/pedidos',label:'Pedidos'},{label:o.id}]);
+}
+
+/* ============================================================
+   ADMIN: ANÚNCIOS
+   ============================================================ */
+function viewAdminListings(params){
+  const status = params.get('status')||'', cat = params.get('cat')||'', cond = params.get('cond')||'', q = params.get('q')||'';
+  const minAge = Number(params.get('idade')||0);
+  const all = STORE.products;
+  const published = all.filter(p=>p.status!=='rascunho');
+  const live = all.filter(p=>p.status==='ativo');
+  const sold = all.filter(p=>p.status==='vendido');
+  const liveAges = live.map(admListedDays), soldAges = sold.map(admListedDays);
+  const newLive = live.filter(admIsNew).length;
+  const cntS = s => all.filter(p=>p.status===s).length;
+  const buckets = [['Até 7 dias',0,7],['8 a 15 dias',8,15],['16 a 30 dias',16,30],['31 a 60 dias',31,60],['Mais de 60 dias',61,1e9]]
+    .map(([label,a,b])=>({label, n:liveAges.filter(d=>d>=a && d<=b).length}));
+  const sellThrough = admPct(sold.length, sold.length + live.length + cntS('pausado'));
+
+  const list = all.filter(p=> (!status || p.status===status) && (!cat || p.category===cat)
+      && (!cond || (cond==='novo') === admIsNew(p)) && (!minAge || (p.status==='ativo' && admListedDays(p)>minAge)))
+    .filter(p=>{ const s=sellerById(p.sellerId); return admMatch(q, p.id, p.brand, p.model, p.type, s&&s.name); })
+    .sort((a,b)=> admListedDays(b)-admListedDays(a));
+
+  return adminShell('anuncios','Anúncios', `
+    <div class="stat-row adm-kpis">
+      ${admTile(live.length, 'Ativos', money(admSum(live,p=>p.price))+' em vitrine')}
+      ${admTile(cntS('pausado'), 'Pausados')}
+      ${admTile(cntS('rascunho'), 'Rascunhos')}
+      ${admTile(sold.length, 'Vendidos', 'Taxa de venda '+sellThrough+'%')}
+      ${admTile(admMedian(liveAges)+' d', 'Mediana anunciado', 'Entre os anúncios ativos')}
+      ${admTile(admMedian(soldAges)+' d', 'Mediana até vender', 'Da publicação até a compra')}
+    </div>
+    <div class="adm-cols">
+      <div class="card card-pad">
+        <div class="adm-card-head"><h3>Há quanto tempo estão anunciados</h3><span>${live.length} ativos</span></div>
+        ${admHBars(buckets)}
+      </div>
+      <div class="card card-pad">
+        <div class="adm-card-head"><h3>Novos e usados</h3><span>anúncios ativos</span></div>
+        ${admMeter(newLive, live.length, 'Novos', 'Usados')}
+        <div class="adm-card-head" style="margin-top:22px"><h3>Por categoria</h3><span>anúncios ativos</span></div>
+        ${admHBars(['taco','bola','sapato'].map(c=>({label:ADM_CAT_LABEL[c], n:live.filter(p=>p.category===c).length})))}
+      </div>
+    </div>
+
+    <div class="adm-filters" style="margin-top:30px">
+      ${admChips('#/admin/anuncios', params, 'status', [['','Todos',all.length],['ativo','Ativos',cntS('ativo')],['pausado','Pausados',cntS('pausado')],['rascunho','Rascunhos',cntS('rascunho')],['vendido','Vendidos',cntS('vendido')],['cancelado','Removidos',cntS('cancelado')]])}
+      ${admSearch('#/admin/anuncios', params, 'Buscar por marca, modelo, código ou vendedor')}
+    </div>
+    <div class="adm-filters">
+      ${admChips('#/admin/anuncios', params, 'cat', [['','Todas as categorias'],['taco','Tacos'],['bola','Bolas'],['sapato','Sapatos']])}
+      ${admChips('#/admin/anuncios', params, 'cond', [['','Novos e usados'],['novo','Só novos',published.filter(admIsNew).length],['usado','Só usados',published.filter(p=>!admIsNew(p)).length]])}
+      ${admChips('#/admin/anuncios', params, 'idade', [['','Qualquer idade'],['30','Ativos há mais de 30 dias'],['60','Há mais de 60 dias']])}
+    </div>
+    <p class="adm-count"><b class="mono">${list.length}</b> anúncio${list.length===1?'':'s'} · <b class="mono">${money(admSum(list,p=>p.price))}</b> em preço pedido</p>
+    ${admTable(
+      [{label:'Anúncio'},{label:'Vendedor'},{label:'Condição'},{label:'Preço',num:1},{label:'Status'},{label:'Dias anunciado',num:1},{label:'Ações'}],
+      list.map(p=>{
+        const s = sellerById(p.sellerId), d = admListedDays(p);
+        return `<tr>
+          <td><a href="#/produto/${p.id}">${admItemCell(p)}</a></td>
+          <td><a href="#/admin/usuarios/${p.sellerId}">${s?escapeHtml(s.name):'—'}</a></td>
+          <td><span class="pill ${admIsNew(p)?'pill-active':'pill-neutral'}">${admIsNew(p)?'Novo':'Usado'}</span><small class="adm-cellsub">${escapeHtml(p.condition||'')}</small></td>
+          <td class="num mono">${money(p.price)}</td>
+          <td>${admListingPill(p)}</td>
+          <td class="num mono">${p.status==='rascunho'?'—':d}<small class="adm-cellsub">${p.status==='vendido'?'até vender · ':''}desde ${new Date(p.createdAt).toLocaleDateString('pt-BR',{day:'2-digit',month:'short'})}</small></td>
+          <td class="adm-actions">
+            ${p.status==='ativo' ? `<button class="btn btn-ghost btn-xs" data-action="admin-listing-status" data-id="${p.id}" data-status="pausado">Pausar</button>` : ''}
+            ${p.status==='pausado' ? `<button class="btn btn-ghost btn-xs" data-action="admin-listing-status" data-id="${p.id}" data-status="ativo">Reativar</button>` : ''}
+            ${p.status==='ativo' || p.status==='pausado' ? `<button class="btn btn-ghost btn-xs adm-danger" data-action="admin-listing-remove" data-id="${p.id}">Remover</button>` : ''}
+          </td>
+        </tr>`;
+      }), 'Nenhum anúncio com esses filtros.')}
+  `);
+}
+
+/* ============================================================
+   ADMIN: USUÁRIOS
+   ============================================================ */
+function viewAdminUsers(params){
+  const f = params.get('f')||'', q = params.get('q')||'';
+  const people = admPeople().map(u=>({u, st:admUserStats(u)}));
+  const cut30 = Date.now()-30*ADM_DAY;
+  const tests = {
+    vendedores: x=>x.st.listings.length>0,
+    compradores: x=>x.st.buys.length>0,
+    verificados: x=>x.u.verified,
+    novos: x=>new Date(x.u.joined).getTime()>=cut30,
+    suspensos: x=>x.u.status==='suspenso',
+    inativos: x=>!x.st.listings.length && !x.st.buys.length,
+  };
+  const cnt = k => people.filter(tests[k]).length;
+  const list = people.filter(x=> !f || (tests[f] && tests[f](x)))
+    .filter(x=> admMatch(q, x.u.name, x.u.email, x.u.city, x.u.state, x.u.id))
+    .sort((a,b)=> b.u.joined.localeCompare(a.u.joined));
+  return adminShell('usuarios','Usuários', `
+    <div class="stat-row adm-kpis">
+      ${admTile(people.length, 'Cadastrados', cnt('novos')+' nos últimos 30 dias')}
+      ${admTile(cnt('vendedores'), 'Vendedores', 'Com ao menos um anúncio')}
+      ${admTile(cnt('compradores'), 'Compradores', 'Com ao menos uma compra')}
+      ${admTile(cnt('verificados'), 'Verificados', admPct(cnt('verificados'), people.length)+'% da base')}
+      ${admTile(cnt('inativos'), 'Sem atividade', 'Nunca anunciaram nem compraram')}
+      ${admTile(cnt('suspensos'), 'Suspensos')}
+    </div>
+    <div class="adm-filters">
+      ${admChips('#/admin/usuarios', params, 'f', [['','Todos',people.length],['vendedores','Vendedores',cnt('vendedores')],['compradores','Compradores',cnt('compradores')],['verificados','Verificados',cnt('verificados')],['novos','Novos em 30 dias',cnt('novos')],['inativos','Sem atividade',cnt('inativos')],['suspensos','Suspensos',cnt('suspensos')]])}
+      ${admSearch('#/admin/usuarios', params, 'Buscar por nome, e-mail ou cidade')}
+    </div>
+    <p class="adm-count"><b class="mono">${list.length}</b> usuário${list.length===1?'':'s'}</p>
+    ${admTable(
+      [{label:'Usuário'},{label:'Local'},{label:'Cadastro'},{label:'Anúncios ativos',num:1},{label:'Vendas',num:1},{label:'Compras',num:1},{label:'Situação'}],
+      list.map(({u,st})=>`<tr data-nav="#/admin/usuarios/${u.id}" tabindex="0" role="link" aria-label="Abrir ${escapeHtml(u.name)}">
+        <td>${admUserCell(u, escapeHtml(u.email||''))}</td>
+        <td class="nowrap">${escapeHtml(u.city)}, ${u.state}</td>
+        <td class="nowrap">${fmtDate(u.joined)}</td>
+        <td class="num mono">${st.active}</td>
+        <td class="num mono">${st.sales.length}<small class="adm-cellsub">${money(st.soldValue)}</small></td>
+        <td class="num mono">${st.buys.length}<small class="adm-cellsub">${money(st.boughtValue)}</small></td>
+        <td>${admUserStatusPill(u)}${u.verified?' <span class="pill pill-neutral">Verificado</span>':''}</td>
+      </tr>`), 'Nenhum usuário com esses filtros.')}
+  `);
+}
+function viewAdminUser(id){
+  const u = STORE.users.find(x=>x.id===id);
+  if(!u) return adminShell('usuarios','Usuário não encontrado', emptyState('user','Usuário não encontrado','Esse cadastro não existe.', `<a href="#/admin/usuarios" class="btn btn-primary">Ver todos os usuários</a>`));
+  const st = admUserStats(u);
+  const orders = STORE.orders.filter(o=>o.buyerId===u.id || o.sellerId===u.id).sort((a,b)=>b.date.localeCompare(a.date));
+  const reports = STORE.reports.filter(r=>{ const p=productById(r.productId); return p && p.sellerId===u.id; });
+  const row = (l,v) => `<div class="spec-row"><span class="spec-label">${l}</span><span class="spec-value" style="font-family:var(--font-body)">${v}</span></div>`;
+  return adminShell('usuarios', escapeHtml(u.name), `
+    <div class="adm-detail">
+      <div>
+        <div class="stat-row adm-kpis pair">
+          ${admTile(st.active, 'Anúncios ativos', st.listings.length+' no total')}
+          ${admTile(st.sales.length, 'Vendas', money(st.soldValue))}
+          ${admTile(st.buys.length, 'Compras', money(st.boughtValue))}
+          ${admTile(reports.length, 'Denúncias recebidas')}
+        </div>
+        <div class="adm-card-head"><h3>Pedidos</h3><span>${orders.length} como comprador ou vendedor</span></div>
+        ${admTable([{label:'Pedido'},{label:'Data'},{label:'Papel'},{label:'Item'},{label:'Total pago',num:1},{label:'Status'}],
+          orders.map(o=>{ const p=productById(o.productId); return `<tr data-nav="#/admin/pedidos/${o.id}" tabindex="0" role="link">
+            <td class="mono"><b>${o.id}</b></td><td class="nowrap">${fmtDate(o.date)}</td><td>${o.sellerId===u.id?'Vendedor':'Comprador'}</td>
+            <td>${p?escapeHtml(p.brand+' '+p.model):'Anúncio removido'}</td><td class="num mono">${money(admPaid(o))}</td><td>${orderPill(o)}</td></tr>`; }),
+          'Este usuário ainda não comprou nem vendeu.')}
+        <div class="adm-card-head" style="margin-top:26px"><h3>Anúncios</h3><span>${st.listings.length} no total</span></div>
+        ${admTable([{label:'Anúncio'},{label:'Preço',num:1},{label:'Status'},{label:'Dias anunciado',num:1}],
+          st.listings.map(p=>`<tr><td><a href="#/produto/${p.id}">${admItemCell(p)}</a></td><td class="num mono">${money(p.price)}</td><td>${admListingPill(p)}</td><td class="num mono">${p.status==='rascunho'?'—':admListedDays(p)}</td></tr>`),
+          'Este usuário nunca anunciou.')}
+      </div>
+      <aside>
+        <div class="card adm-side-card">
+          <div style="display:flex;gap:12px;align-items:center;padding:4px 20px 16px">
+            <span class="avatar-circle lg" style="background:${u.color}">${u.initials}</span>
+            <div><div style="font-weight:700">${escapeHtml(u.name)}</div><div style="margin-top:4px">${admUserStatusPill(u)}${u.verified?' <span class="pill pill-neutral">Verificado</span>':''}</div></div>
+          </div>
+          ${row('E-mail', escapeHtml(u.email||'—'))}
+          ${row('Local', escapeHtml(u.city)+', '+u.state)}
+          ${row('Cadastro', fmtDate(u.joined))}
+          ${row('Avaliação', u.ratingCount ? u.rating.toFixed(1)+' ('+u.ratingCount+')' : 'Sem avaliações')}
+          ${u.status==='suspenso' ? row('Motivo da suspensão', escapeHtml(u.suspendedReason||'—')) : ''}
+        </div>
+        ${u.role==='admin' ? '' : `<div class="card adm-side-card" style="padding:20px">
+          <h4 style="padding:0 0 12px">Ações</h4>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <button class="btn btn-outline btn-sm" data-action="admin-user-verify" data-id="${u.id}">${u.verified?'Remover verificação':'Marcar como verificado'}</button>
+            ${u.status==='suspenso'
+              ? `<button class="btn btn-primary btn-sm" data-action="admin-user-reactivate" data-id="${u.id}">Reativar conta</button>`
+              : `<button class="btn btn-danger-outline btn-sm" data-action="admin-user-suspend" data-id="${u.id}">Suspender conta</button>`}
+            <a class="btn btn-ghost btn-sm" href="#/loja/${u.id}">Ver perfil público</a>
+          </div>
+          <p style="font-size:12px;color:var(--color-ink-faint);margin-top:12px">Suspender bloqueia o login e pausa os anúncios ativos da conta.</p>
+        </div>`}
+      </aside>
+    </div>
+  `, [{href:'#/admin',label:'Admin'},{href:'#/admin/usuarios',label:'Usuários'},{label:escapeHtml(u.name)}]);
+}
+
+/* ============================================================
+   ADMIN: MODERAÇÃO
+   ============================================================ */
+function viewAdminModeration(){
+  const issues = admOpenDisputes().sort((a,b)=>a.date.localeCompare(b.date));
+  const open = admOpenReports(), closed = STORE.reports.filter(r=>r.status!=='aberta');
+  const unanswered = admUnanswered();
+  const reportCard = (r, done) => {
+    const p = productById(r.productId), rep = sellerById(r.reporterId), s = p && sellerById(p.sellerId);
+    return `<div class="card card-pad adm-report">
+      <div class="adm-report-top">
+        ${p ? `<a href="#/produto/${p.id}">${admItemCell(p)}</a>` : admItemCell(null)}
+        <span class="pill ${done?'pill-neutral':'pill-paused'}">${done ? (r.resolution==='anuncio_removido'?'Anúncio removido':'Arquivada') : 'Aberta'}</span>
+      </div>
+      <p><b>${escapeHtml(r.reason)}</b> · <span style="color:var(--color-ink-muted)">${r.id} · ${timeAgo(r.date)}</span></p>
+      <p style="color:var(--color-ink-muted);margin-top:4px">“${escapeHtml(r.text)}”</p>
+      <p style="font-size:12.5px;color:var(--color-ink-muted);margin-top:8px">Denunciado por ${rep?escapeHtml(rep.name):'—'}${s?` · vendedor <a href="#/admin/usuarios/${s.id}" style="text-decoration:underline">${escapeHtml(s.name)}</a>`:''}</p>
+      ${done ? '' : `<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+        <button class="btn btn-danger-outline btn-sm" data-action="admin-report-resolve" data-id="${r.id}" data-outcome="anuncio_removido">Remover anúncio</button>
+        <button class="btn btn-ghost btn-sm" data-action="admin-report-resolve" data-id="${r.id}" data-outcome="arquivada">Arquivar sem ação</button>
+      </div>`}
+    </div>`;
+  };
+  return adminShell('moderacao','Moderação', `
+    <div class="adm-card-head"><h3>Disputas e entregas com problema</h3><span>${issues.length} em aberto</span></div>
+    ${issues.length ? admTable([{label:'Pedido'},{label:'Aberto há'},{label:'Motivo'},{label:'Comprador'},{label:'Vendedor'},{label:'Valor em jogo',num:1},{label:'Status'}],
+      issues.map(o=>{ const b=sellerById(o.buyerId), s=sellerById(o.sellerId);
+        const since = o.dispute ? o.dispute.openedAt : ((o.trackingHistory||[]).slice(-1)[0]||{}).at || o.date;
+        return `<tr data-nav="#/admin/pedidos/${o.id}" tabindex="0" role="link"><td class="mono"><b>${o.id}</b></td><td class="nowrap">${admDays(since,new Date())} dias</td>
+          <td>${escapeHtml(o.dispute ? o.dispute.reason : (o.trackingRaw||'Falha na entrega'))}</td><td>${b?escapeHtml(b.name):'—'}</td><td>${s?escapeHtml(s.name):'—'}</td>
+          <td class="num mono">${money(admPaid(o))}</td><td>${orderPill(o)}</td></tr>`; }))
+      : `<p class="adm-nothing">Nenhuma disputa ou entrega com problema em aberto.</p>`}
+
+    <div class="adm-card-head" style="margin-top:30px"><h3>Denúncias de anúncios</h3><span>${open.length} em aberto</span></div>
+    ${open.length ? `<div class="adm-report-grid">${open.map(r=>reportCard(r,false)).join('')}</div>` : `<p class="adm-nothing">Nenhuma denúncia aguardando análise.</p>`}
+
+    <div class="adm-card-head" style="margin-top:30px"><h3>Perguntas sem resposta</h3><span>${unanswered.length} no total</span></div>
+    ${unanswered.length ? admTable([{label:'Anúncio'},{label:'Pergunta'},{label:'Vendedor'},{label:'Esperando há',num:1}],
+      unanswered.map(({q,p,days})=>{ const s=sellerById(p.sellerId); return `<tr><td><a href="#/produto/${p.id}">${admItemCell(p)}</a></td><td>${escapeHtml(q.text)}<small class="adm-cellsub">${escapeHtml(q.buyer)}</small></td>
+        <td><a href="#/admin/usuarios/${p.sellerId}">${s?escapeHtml(s.name):'—'}</a></td><td class="num mono">${days} d</td></tr>`; }))
+      : `<p class="adm-nothing">Todas as perguntas foram respondidas.</p>`}
+
+    ${closed.length ? `<div class="adm-card-head" style="margin-top:30px"><h3>Denúncias encerradas</h3><span>${closed.length}</span></div>
+      <div class="adm-report-grid">${closed.map(r=>reportCard(r,true)).join('')}</div>` : ''}
+  `);
+}
+
+/* ============================================================
+   ADMIN: FINANCEIRO
+   ============================================================ */
+function viewAdminFinance(){
+  const orders = STORE.orders.slice().sort((a,b)=>b.date.localeCompare(a.date));
+  const valid = orders.filter(admCounts), held = orders.filter(admHeld);
+  const done = orders.filter(o=>o.orderStatus==='concluido'), refunded = orders.filter(o=>o.orderStatus==='reembolsado');
+  const bySeller = {};
+  valid.forEach(o=>{ const k=o.sellerId; bySeller[k] = bySeller[k] || {n:0, gmv:0, fee:0, paid:0, held:0};
+    bySeller[k].n++; bySeller[k].gmv+=o.price; bySeller[k].fee+=admFee(o);
+    if(o.orderStatus==='concluido') bySeller[k].paid+=admPayout(o); else bySeller[k].held+=admPayout(o); });
+  const state = o => o.orderStatus==='concluido' ? '<span class="pill pill-sold">Liberado</span>' : o.orderStatus==='reembolsado' ? '<span class="pill pill-cancelled">Reembolsado</span>'
+    : o.orderStatus==='em_disputa' ? '<span class="pill pill-cancelled">Bloqueado</span>' : '<span class="pill pill-paused">Em custódia</span>';
+  return adminShell('financeiro','Financeiro', `
+    <div class="stat-row adm-kpis">
+      ${admTile(money(admSum(valid,o=>o.price)), 'GMV', valid.length+' pedidos, sem frete')}
+      ${admTile(money(admSum(valid, admFee)), 'Comissão', 'Receita da plataforma')}
+      ${admTile(money(admSum(valid,o=>o.freight)), 'Frete cobrado', 'Repassado ao vendedor')}
+      ${admTile(money(admSum(held, admPaid)), 'Em custódia', held.length+' pedido'+(held.length===1?'':'s'))}
+      ${admTile(money(admSum(done, admPayout)), 'Repassado', done.length+' pedido'+(done.length===1?'':'s')+' liberado'+(done.length===1?'':'s'))}
+      ${admTile(money(admSum(refunded, admPaid)), 'Reembolsado', refunded.length+' pedido'+(refunded.length===1?'':'s'))}
+    </div>
+    <div class="card card-pad" style="margin-bottom:26px">
+      <div class="adm-card-head"><h3>Comissão da plataforma</h3><span>valor de exemplo neste protótipo</span></div>
+      <form data-form="admin-fee" class="adm-fee">
+        <label for="adm-fee">Percentual sobre o preço do item</label>
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+          <input class="input mono" id="adm-fee" name="fee" type="number" min="0" max="30" step="0.5" value="${(STORE.settings.feeRate*100)}" style="width:110px" required>
+          <span>%</span>
+          <button class="btn btn-outline btn-sm" type="submit">Salvar</button>
+        </div>
+        <p>Vale para pedidos novos. Pedidos já feitos mantêm o percentual do momento da compra.</p>
+      </form>
+    </div>
+    <div class="adm-card-head"><h3>Repasses por vendedor</h3></div>
+    ${admTable([{label:'Vendedor'},{label:'Pedidos',num:1},{label:'GMV',num:1},{label:'Comissão',num:1},{label:'Já repassado',num:1},{label:'A repassar',num:1}],
+      Object.keys(bySeller).sort((a,b)=>bySeller[b].gmv-bySeller[a].gmv).map(k=>{ const s=sellerById(k), v=bySeller[k];
+        return `<tr data-nav="#/admin/usuarios/${k}" tabindex="0" role="link"><td>${admUserCell(s)}</td><td class="num mono">${v.n}</td><td class="num mono">${money(v.gmv)}</td><td class="num mono">${money(v.fee)}</td><td class="num mono">${money(v.paid)}</td><td class="num mono">${money(v.held)}</td></tr>`; }))}
+    <div class="adm-card-head" style="margin-top:26px"><h3>Repasses por pedido</h3></div>
+    ${admTable([{label:'Pedido'},{label:'Data'},{label:'Vendedor'},{label:'Item',num:1},{label:'Frete',num:1},{label:'Comissão',num:1},{label:'Repasse',num:1},{label:'Situação'}],
+      orders.map(o=>{ const s=sellerById(o.sellerId); return `<tr data-nav="#/admin/pedidos/${o.id}" tabindex="0" role="link"><td class="mono"><b>${o.id}</b></td><td class="nowrap">${fmtDate(o.date)}</td><td>${s?escapeHtml(s.name):'—'}</td>
+        <td class="num mono">${money(o.price)}</td><td class="num mono">${money(o.freight)}</td><td class="num mono">${money(admFee(o))}</td><td class="num mono">${money(admPayout(o))}</td><td>${state(o)}</td></tr>`; }))}
+  `);
+}
+
+/* ============================================================
+   ADMIN: AUDITORIA
+   ============================================================ */
+function viewAdminAudit(){
+  const log = STORE.adminLog;
+  const target = e => e.targetType==='pedido' ? `<a href="#/admin/pedidos/${e.targetId}" style="text-decoration:underline">${e.targetId}</a>`
+    : e.targetType==='usuario' ? `<a href="#/admin/usuarios/${e.targetId}" style="text-decoration:underline">${escapeHtml((sellerById(e.targetId)||{}).name||e.targetId)}</a>`
+    : e.targetType==='anuncio' ? (()=>{ const p=productById(e.targetId); return p ? `<a href="#/produto/${p.id}" style="text-decoration:underline">${escapeHtml(p.brand+' '+p.model)}</a>` : e.targetId; })()
+    : escapeHtml(e.targetId||'');
+  return adminShell('auditoria','Auditoria', `
+    <p class="adm-lede" style="margin-bottom:18px">Toda ação feita no painel fica registrada aqui, com quem fez e quando. O registro não pode ser editado.</p>
+    ${admTable([{label:'Quando'},{label:'Administrador'},{label:'Ação'},{label:'Alvo'},{label:'Detalhe'}],
+      log.map(e=>`<tr><td class="mono nowrap">${new Date(e.at).toLocaleString('pt-BR',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'})}</td>
+        <td>${escapeHtml((sellerById(e.adminId)||{}).name||e.adminId)}</td><td><b>${ADM_LOG_LABEL[e.action]||e.action}</b></td><td>${target(e)}</td><td>${escapeHtml(e.detail)}</td></tr>`),
+      'Nenhuma ação registrada ainda. Pause um anúncio ou decida uma disputa e ela aparece aqui.')}
+  `);
+}
+
+/* ============================================================
+   ADMIN: ações e formulários
+   ============================================================ */
+function admGuard(){ if(!isAdmin()){ toast('Ação restrita a administradores.'); return false; } return true; }
+function admRemoveListing(p, reason){
+  p.status = 'cancelado'; p.removedByAdmin = true; p.removedReason = reason; p.removedAt = new Date().toISOString();
+}
+Object.assign(ACTIONS, {
+  'admin-listing-status'(el){
+    if(!admGuard()) return;
+    const p = productById(el.dataset.id); if(!p) return;
+    p.status = el.dataset.status;
+    admLog(p.status==='ativo'?'anuncio.reativar':'anuncio.pausar', 'anuncio', p.id, p.brand+' '+p.model);
+    saveState(); toast(p.status==='ativo'?'Anúncio reativado.':'Anúncio pausado.'); render();
+  },
+  'admin-listing-remove'(el){
+    if(!admGuard()) return;
+    const p = productById(el.dataset.id); if(!p) return;
+    openModal(`<h3 style="font-size:20px;margin-bottom:6px;padding-right:30px">Remover anúncio</h3>
+      <p style="font-size:14px;color:var(--color-ink-muted);margin-bottom:16px">${escapeHtml(p.brand+' '+p.model)} sai da vitrine e o vendedor é avisado do motivo.</p>
+      <form data-form="admin-remove-listing" data-id="${p.id}">
+        <div class="field"><label for="adm-reason">Motivo</label><select class="input" id="adm-reason" name="reason">${ADM_REMOVE_REASONS.map(r=>`<option>${r}</option>`).join('')}</select></div>
+        <div style="display:flex;gap:10px;justify-content:flex-end"><button type="button" class="btn btn-ghost btn-sm" data-action="close-modal">Cancelar</button><button class="btn btn-primary btn-sm" type="submit">Remover anúncio</button></div>
+      </form>`);
+  },
+  'admin-user-verify'(el){
+    if(!admGuard()) return;
+    const u = STORE.users.find(x=>x.id===el.dataset.id); if(!u) return;
+    u.verified = !u.verified;
+    admLog(u.verified?'usuario.verificar':'usuario.desverificar', 'usuario', u.id);
+    saveState(); toast(u.verified?'Usuário marcado como verificado.':'Verificação removida.'); render();
+  },
+  'admin-user-suspend'(el){
+    if(!admGuard()) return;
+    const u = STORE.users.find(x=>x.id===el.dataset.id); if(!u || u.role==='admin') return;
+    const n = STORE.products.filter(p=>p.sellerId===u.id && p.status==='ativo').length;
+    openModal(`<h3 style="font-size:20px;margin-bottom:6px;padding-right:30px">Suspender ${escapeHtml(u.name)}</h3>
+      <p style="font-size:14px;color:var(--color-ink-muted);margin-bottom:16px">O login fica bloqueado${n?` e ${n} anúncio${n>1?'s':''} ativo${n>1?'s':''} ${n>1?'são pausados':'é pausado'}`:''}. Pedidos em andamento seguem até o fim.</p>
+      <form data-form="admin-suspend-user" data-id="${u.id}">
+        <div class="field"><label for="adm-sreason">Motivo</label><input class="input" id="adm-sreason" name="reason" type="text" placeholder="Ex.: denúncias confirmadas de anúncio falso" required></div>
+        <div style="display:flex;gap:10px;justify-content:flex-end"><button type="button" class="btn btn-ghost btn-sm" data-action="close-modal">Cancelar</button><button class="btn btn-primary btn-sm" type="submit">Suspender conta</button></div>
+      </form>`);
+  },
+  'admin-user-reactivate'(el){
+    if(!admGuard()) return;
+    const u = STORE.users.find(x=>x.id===el.dataset.id); if(!u) return;
+    u.status = 'ativo'; u.suspendedReason = null;
+    admLog('usuario.reativar', 'usuario', u.id);
+    saveState(); toast('Conta reativada. Os anúncios continuam pausados até o vendedor reativar.'); render();
+  },
+  'admin-order-release'(el){
+    if(!admGuard()) return;
+    const o = STORE.orders.find(x=>x.id===el.dataset.id); if(!o) return;
+    confirmDialog('Liberar pagamento ao vendedor?', `O repasse de ${money(admPayout(o))} do pedido ${o.id} é liberado agora e o pedido é concluído.`, 'Liberar pagamento', 'admin-order-release-confirm', `data-id="${o.id}"`);
+  },
+  'admin-order-release-confirm'(el){
+    if(!admGuard()) return;
+    const o = STORE.orders.find(x=>x.id===el.dataset.id); if(!o) return;
+    const wasDispute = o.orderStatus==='em_disputa';
+    o.orderStatus = 'concluido'; o.paymentReleasedAt = new Date().toISOString(); o.paymentReleaseReason = 'decisao_admin';
+    if(o.dispute){ o.dispute.status = 'encerrada'; o.dispute.resolution = 'liberado_vendedor'; o.dispute.resolvedAt = o.paymentReleasedAt; }
+    admLog('pedido.liberar', 'pedido', o.id, money(admPayout(o))+(wasDispute?' · disputa decidida a favor do vendedor':''));
+    closeModal(); saveState(); toast('Pagamento liberado ao vendedor.'); render();
+  },
+  'admin-order-refund'(el){
+    if(!admGuard()) return;
+    const o = STORE.orders.find(x=>x.id===el.dataset.id); if(!o) return;
+    openModal(`<h3 style="font-size:20px;margin-bottom:6px;padding-right:30px">Reembolsar o comprador</h3>
+      <p style="font-size:14px;color:var(--color-ink-muted);margin-bottom:16px">${money(admPaid(o))} voltam para o comprador e o vendedor não recebe o repasse do pedido ${o.id}.</p>
+      <form data-form="admin-refund-order" data-id="${o.id}">
+        <div class="field"><label for="adm-rnote">Justificativa da decisão</label><input class="input" id="adm-rnote" name="note" type="text" placeholder="Ex.: fotos confirmam que faltou o ferro 4" required></div>
+        <div style="display:flex;gap:10px;justify-content:flex-end"><button type="button" class="btn btn-ghost btn-sm" data-action="close-modal">Cancelar</button><button class="btn btn-primary btn-sm" type="submit">Reembolsar</button></div>
+      </form>`);
+  },
+  'admin-report-resolve'(el){
+    if(!admGuard()) return;
+    const r = STORE.reports.find(x=>x.id===el.dataset.id); if(!r) return;
+    const outcome = el.dataset.outcome, p = productById(r.productId);
+    r.status = 'resolvida'; r.resolution = outcome; r.resolvedAt = new Date().toISOString();
+    if(outcome==='anuncio_removido' && p){ admRemoveListing(p, r.reason); admLog('denuncia.remover_anuncio', 'anuncio', p.id, r.id+' · '+r.reason); }
+    else admLog('denuncia.arquivar', 'denuncia', r.id, p ? p.brand+' '+p.model : '');
+    saveState(); toast(outcome==='anuncio_removido'?'Anúncio removido e denúncia encerrada.':'Denúncia arquivada.'); render();
+  },
+});
+Object.assign(FORM_HANDLERS, {
+  'admin-search'(form){
+    const {params} = parseHash(), p = new URLSearchParams(params.toString()), q = fv(form,'q').trim();
+    if(q) p.set('q', q); else p.delete('q');
+    const qs = p.toString(); go(form.dataset.base + (qs ? '?'+qs : ''));
+  },
+  'admin-remove-listing'(form){
+    if(!admGuard()) return;
+    const p = productById(form.dataset.id); if(!p) return;
+    const reason = fv(form,'reason');
+    admRemoveListing(p, reason); admLog('anuncio.remover', 'anuncio', p.id, reason);
+    closeModal(); saveState(); toast('Anúncio removido.'); render();
+  },
+  'admin-suspend-user'(form){
+    if(!admGuard()) return;
+    const u = STORE.users.find(x=>x.id===form.dataset.id); if(!u) return;
+    const reason = fv(form,'reason').trim(); if(!reason) return;
+    u.status = 'suspenso'; u.suspendedReason = reason; u.suspendedAt = new Date().toISOString();
+    let n = 0; STORE.products.forEach(p=>{ if(p.sellerId===u.id && p.status==='ativo'){ p.status='pausado'; p.pausedByAdmin=true; n++; } });
+    admLog('usuario.suspender', 'usuario', u.id, reason+(n?` · ${n} anúncio${n>1?'s':''} pausado${n>1?'s':''}`:''));
+    closeModal(); saveState(); toast('Conta suspensa.'); render();
+  },
+  'admin-refund-order'(form){
+    if(!admGuard()) return;
+    const o = STORE.orders.find(x=>x.id===form.dataset.id); if(!o) return;
+    const note = fv(form,'note').trim(); if(!note) return;
+    o.orderStatus = 'reembolsado'; o.refundedAt = new Date().toISOString();
+    if(!o.dispute) o.dispute = {openedAt:o.refundedAt, reason:'Problema na entrega', text:'', status:'aberta', resolution:null};
+    o.dispute.status = 'encerrada'; o.dispute.resolution = 'reembolsado'; o.dispute.note = note; o.dispute.resolvedAt = o.refundedAt;
+    admLog('pedido.reembolsar', 'pedido', o.id, money(admPaid(o))+' · '+note);
+    closeModal(); saveState(); toast('Comprador reembolsado.'); render();
+  },
+  'admin-order-note'(form){
+    if(!admGuard()) return;
+    const o = STORE.orders.find(x=>x.id===form.dataset.id); if(!o) return;
+    const text = fv(form,'note').trim(); if(!text) return;
+    o.adminNotes = o.adminNotes || [];
+    o.adminNotes.push({at:new Date().toISOString(), adminId:STORE.currentUserId, text});
+    admLog('pedido.nota', 'pedido', o.id, text.slice(0,80));
+    saveState(); toast('Nota salva.'); render();
+  },
+  'admin-fee'(form){
+    if(!admGuard()) return;
+    const v = Number(fv(form,'fee'));
+    if(!(v>=0 && v<=30)){ toast('Informe um percentual entre 0 e 30.'); return; }
+    const old = STORE.settings.feeRate;
+    // Freeze the old rate on existing orders so history does not change.
+    STORE.orders.forEach(o=>{ if(o.feeRate==null) o.feeRate = old; });
+    STORE.settings.feeRate = v/100;
+    admLog('config.comissao', 'config', 'comissao', (old*100).toLocaleString('pt-BR')+'% → '+v.toLocaleString('pt-BR')+'%');
+    saveState(); toast('Comissão atualizada para '+v.toLocaleString('pt-BR')+'%.'); render();
+  },
+});
+// Links inside a dialog (account menu) close it when followed.
+document.addEventListener('click', e=>{ if(e.target.closest && e.target.closest('a[data-close-modal]')) closeModal(); });
+
+
 
 /* ============================================================
    INIT
